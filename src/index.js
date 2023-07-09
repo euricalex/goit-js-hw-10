@@ -25,14 +25,16 @@ const selectBreedID = selectList.value;
 fetchCatByBreed(selectBreedID)
     .then(catData => {
       const imageCat = document.createElement('img');
+      imageCat.style.width = "600px";
       imageCat.src = catData.url;
 
       catInfo.innerHTML = `
-      <p><strong>${catData.breeds[0].name}</strong> </p>
-      <p><strong>Description:</strong> ${catData.breeds[0].description}</p>
-      <p><strong>Temperament:</strong> ${catData.breeds[0].temperament}</p>
+      <p class="name"><strong>${catData.breeds[0].name}</strong> </p>
+      <p class="desc"><strong>Description:</strong> ${catData.breeds[0].description}</p>
+      <p class="temp"><strong>Temperament:</strong> ${catData.breeds[0].temperament}</p>
     `;
     catInfo.prepend(imageCat);
+  
    
     });
     })
