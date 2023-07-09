@@ -1,3 +1,4 @@
+import Notiflix from 'notiflix';
 import axios from "axios";
 axios.defaults.headers.common["x-api-key"] = "live_Z8l9F93SRU8dYWzbJDVTubDfCbJzIKfD1UP5CtYqKcLNZjaRR0P8B9RHyk02d1Al";
 
@@ -61,6 +62,7 @@ export function fetchBreeds() {
 
       function showError() {
 selectError.classList.remove('hidden');
+Notiflix.Notify.Failure('Oops! Something went wrong! Try reloading the page!');
       }
       function hideError() {
 selectError.classList.add('hidden');

@@ -5,7 +5,10 @@ import { fetchCatByBreed } from "./cat-api.js";
 
 
 const selectList = document.querySelector('select.breed-select');
-
+const choices = new Choices(selectList, {
+  searchEnabled: false,
+  itemSelectText: ""
+});
 
 
 
@@ -13,16 +16,8 @@ const selectList = document.querySelector('select.breed-select');
 
     const catInfo = document.querySelector('div.cat-info');
 
-    fetchBreeds()
-    .then(data => {
-      data.forEach(breed => {
-        const option = document.createElement('option');
-        option.value = breed.value;
-        option.textContent = breed.label;
-        selectList.appendChild(option);
-       
-        
-      });
+    fetchBreeds().then(data => {
+      choices.setChoices(data, 'value', 'label');
     });
     
     selectList.addEventListener('change', () => {
