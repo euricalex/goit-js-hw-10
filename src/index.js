@@ -26,6 +26,7 @@ fetchCatByBreed(selectBreedID)
     .then(catData => {
       const imageCat = document.createElement('img');
       imageCat.style.width = "600px";
+      imageCat.style.height = "500px"
       imageCat.src = catData.url;
 
       catInfo.innerHTML = `
