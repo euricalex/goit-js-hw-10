@@ -3,10 +3,14 @@ import { fetchBreeds } from "./cat-api.js";
 import { fetchCatByBreed } from "./cat-api.js";
 
 
-    const selectList = document.querySelector('select.breed-select');
-    console.log(selectList);
-    const selectLoader = document.querySelector('.loader');
-    const selectError = document.querySelector('.error');
+
+const selectList = document.querySelector('select.breed-select');
+
+
+
+
+
+
     const catInfo = document.querySelector('div.cat-info');
 
     fetchBreeds()
@@ -16,6 +20,7 @@ import { fetchCatByBreed } from "./cat-api.js";
         option.value = breed.value;
         option.textContent = breed.label;
         selectList.appendChild(option);
+       
         
       });
     });
@@ -33,11 +38,8 @@ fetchCatByBreed(selectBreedID)
       <p><strong>Temperament:</strong> ${catData.breeds[0].temperament}</p>
     `;
     catInfo.prepend(imageCat);
+   
     });
     })
-let timerId = 0;
-    setTimeout(() => {
-      selectLoader.disabled = true;
-    }, 2000)
-    
+
 

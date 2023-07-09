@@ -1,0 +1,17 @@
+.loader {
+    display: none; /* По замовчуванню приховуємо завантажувач */
+  }
+  
+  .error {
+    color: red;
+    font-size: 20px;
+  }
+  
+  .visible {
+    display: block !important; /* Встановлює видимість елемента */
+  }
+  
+  .hidden {
+    display: none !important; /* Приховує елемент */
+  }
+  
