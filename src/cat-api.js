@@ -6,7 +6,6 @@ const selectLoader = document.querySelector('.loader');
 const selectError = document.querySelector('.error');
 
 
-
 export function fetchBreeds() {
     const BASE_URL = "https://api.thecatapi.com/v1/breeds";
     showLoader();
@@ -62,7 +61,8 @@ export function fetchBreeds() {
 
       function showError() {
 selectError.classList.remove('hidden');
-Notiflix.Notify.Failure('Oops! Something went wrong! Try reloading the page!');
+Notiflix.Notify.Failure("Oops! Something went wrong! Try reloading the page!");
+//       
       }
       function hideError() {
 selectError.classList.add('hidden');

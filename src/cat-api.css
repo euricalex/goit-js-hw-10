@@ -21,16 +21,35 @@
   margin-bottom: 60px;
 
 }
-
-/* .cat-info {
+.cat-info {
   display: flex;
+  align-items: center;
 }
-.temp {
-  margin-bottom: 5px;
-} */
+
+.image-cat {
+  border: 2px solid red;
+  width: 600px;
+  height: 500px;
+  margin-right: 20px;
+  border: 5px solid blue;
+  border-radius: 6px;
+  box-shadow: 0 0 0 2px blue, 0 0 0 4px white;
+}
+ .cat-details {
+  margin-bottom: 250px;
+  max-width: 600px;
+  font-size: 20px;
+  font-family: Georgia, 'Times New Roman', Times, serif;
+  
+ }
+ 
+
+
+
+
 .is-focused .choices__inner,
 .is-open .choices__inner {
-  border: 2px solid red;
+  border: 2px solid blue;
 }
 .choices[data-type*=select-one]:after {
   height: 8px;
