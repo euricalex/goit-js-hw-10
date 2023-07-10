@@ -1,5 +1,6 @@
 import Notiflix from 'notiflix';
 import axios from "axios";
+
 axios.defaults.headers.common["x-api-key"] = "live_Z8l9F93SRU8dYWzbJDVTubDfCbJzIKfD1UP5CtYqKcLNZjaRR0P8B9RHyk02d1Al";
 
 const selectLoader = document.querySelector('.loader');
@@ -50,20 +51,22 @@ export function fetchBreeds() {
             hideLoader();
           })
       }
-
-       function showLoader() {``
+      function showLoader() {
       selectLoader.classList.add('visible');
       }
-
-       function hideLoader() {
+  
+        function hideLoader() {
     selectLoader.classList.remove('visible');
       }
+  
+       function showError() {
+  selectError.classList.remove('hidden');
+  Notiflix.Notify.failure("Oops! Something went wrong! Try reloading the page!");
+  //       
+      }
+       function hideError() {
+  selectError.classList.add('hidden');
+      }
+  
 
-      function showError() {
-selectError.classList.remove('hidden');
-Notiflix.Notify.Failure("Oops! Something went wrong! Try reloading the page!");
-//       
-      }
-      function hideError() {
-selectError.classList.add('hidden');
-      }
+     
