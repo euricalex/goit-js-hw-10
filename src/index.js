@@ -40,7 +40,7 @@ fetchCatByBreed(selectBreedID)
       catInfo.innerHTML = `
       <div class="cat-details">
       <p class="name"><strong>${catData.breeds[0].name}</strong> </p>
-      <p class="desc"><strong>Description:</strong> ${catData.breeds[0].description}</p>
+      <p class="desc"> ${catData.breeds[0].description}</p>
       <p class="temp"><strong>Temperament:</strong> ${catData.breeds[0].temperament}</p>
     </div>
 `;
