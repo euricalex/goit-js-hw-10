@@ -1,5 +1,4 @@
 // index.js
-
 import { fetchBreeds, fetchCatByBreed } from "./cat-api.js";
 
 const selectList = document.querySelector('select.breed-select');
@@ -8,7 +7,7 @@ const choices = new Choices(selectList, {
   searchEnabled: false,
   itemSelectText: ""
 });
-
+selectList.style.display = 'none';
 selectList.addEventListener('change', () => {
   const selectBreedID = selectList.value;
   fetchCatByBreed(selectBreedID)
@@ -28,6 +27,9 @@ selectList.addEventListener('change', () => {
     });
 });
 
+// Скрыть селект до завершения загрузки
+
+
 fetchBreeds().then(breeds => {
   const options = breeds.map(breed => ({
     value: breed.value,
@@ -41,9 +43,10 @@ fetchBreeds().then(breeds => {
 
   choices.setChoices(options, 'value', 'label');
   choices.setChoiceByValue('');
+
+  // Отобразить селект после загрузки
+  selectList.style.display = 'block';
 });
-
-
 
 
     
