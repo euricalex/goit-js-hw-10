@@ -3,8 +3,11 @@ import { fetchBreeds } from "./cat-api.js";
 import { fetchCatByBreed } from "./cat-api.js";
 
 
-document.addEventListener('DOMContentLoaded', () => {
+
   const selectList = document.querySelector('select.breed-select');
+  selectList.addEventListener('DOMContentLoaded', () => {
+    
+  })
   const catInfo = document.querySelector('div.cat-info');
   const choices = new Choices(selectList, {
    searchEnabled: false,
@@ -47,7 +50,7 @@ document.addEventListener('DOMContentLoaded', () => {
       catInfo.prepend(imageCat);
       });
       });
-})
+
 
 
     
