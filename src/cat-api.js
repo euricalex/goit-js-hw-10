@@ -7,15 +7,13 @@ axios.defaults.headers.common["x-api-key"] = "live_Z8l9F93SRU8dYWzbJDVTubDfCbJzI
 const selectLoader = document.querySelector('.loader');
 const selectError = document.querySelector('.error');
 const catInfoHide = document.querySelector('.cat-info-hide');
-// const selectChoices = document.querySelector('.choices');
+
 
 
 export function fetchBreeds() {
     const BASE_URL = "https://api.thecatapi.com/v1/breeds";
-    // selectChoices.style.display = 'none';
     showLoader();
     hideError();
-    // selectChoices.style.display = 'block';
   
     catInfoHide.innerHTML = '';
   
