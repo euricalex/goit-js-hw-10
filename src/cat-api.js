@@ -1,14 +1,10 @@
 import Notiflix from 'notiflix';
 import axios from "axios";
-
-
 axios.defaults.headers.common["x-api-key"] = "live_Z8l9F93SRU8dYWzbJDVTubDfCbJzIKfD1UP5CtYqKcLNZjaRR0P8B9RHyk02d1Al";
 
 const selectLoader = document.querySelector('.loader');
 const selectError = document.querySelector('.error');
 const catInfoHide = document.querySelector('.cat-info-hide');
-
-
 
 export function fetchBreeds() {
     const BASE_URL = "https://api.thecatapi.com/v1/breeds";
@@ -17,8 +13,6 @@ export function fetchBreeds() {
   
     catInfoHide.innerHTML = '';
   
-  
-    
     return axios.get(BASE_URL)
       .then(response => {
         if (response.status !== 200) {
@@ -40,12 +34,10 @@ export function fetchBreeds() {
     }
     export function fetchCatByBreed(breedId) {
         const URL = `https://api.thecatapi.com/v1/images/search?breed_ids=${breedId}`;
-        
         showLoader();
         hideError();
         catInfoHide.innerHTML = '';
         
-      
         return axios.get(URL)
           .then(response => {
             if (response.status !== 200) {
@@ -70,8 +62,7 @@ export function fetchBreeds() {
     selectLoader.classList.remove('visible');
 
       }
-  
-  
+
        function showError() {
   selectError.classList.remove('hidden');
   Notiflix.Notify.failure("Oops! Something went wrong! Try reloading the page!");
